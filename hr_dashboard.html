@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Portal</title>
+    <style>
+        body {
+            background-image: url("{% static 'static/images/hr.jpg' %}");
+            background-size: cover;
+            height: 100vh;
+            margin: 0; /* Remove default margin */
+            display: flex; /* Center content */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            color: white; /* Text color for visibility */
+        }
+        .content {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+            padding: 20px; /* Padding around the content */
+            border-radius: 10px; /* Rounded corners */
+            text-align: center; /* Center text */
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Welcome to the HR Portal</h1>
+        <form action="/login" method="POST">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <div class="remember-me">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Remember Me</label>
+            </div>
+            
+            <button type="submit">Sign In</button>
+            <p>Forgot your password?</p>
+            <p>If you have not created an account yet, please sign up first.</p>
+            <a href="/signup">Sign Up</a>
+        </form>
+    </div>
+</body>
+</html>
